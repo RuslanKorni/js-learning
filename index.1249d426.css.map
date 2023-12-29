@@ -1,0 +1,1 @@
+{"mappings":"ACAA","sources":["index.1249d426.css","src/css/styles.css"],"sourcesContent":[".title {\n  color: red;\n  font-size: 50px;\n  font-style: normal;\n}\n\n/*# sourceMappingURL=index.1249d426.css.map */\n",".title {\n    font-size: 50px;\n    font-style: normal;\n    color: red;\n}"],"names":[],"version":3,"file":"index.1249d426.css.map"}
