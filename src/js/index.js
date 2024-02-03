@@ -154,14 +154,24 @@ class Hero {
 //* Я хочу что бы воин наследовал свойства Hero
 class Warrior extends Hero {
   constructor(name, xp, weapon) {
-    // для того что бы все работало нужно 
-    // в конструкторе ребенка вызвать конструктор 
+    // для того что бы все работало нужно
+    // в конструкторе ребенка вызвать конструктор
     // родиеля через super()
-      super(name, xp);
+    super(name, xp);
     this.weapon = weapon;
   }
 }
 
-const Poly = new Warrior('Poly', 1000, 'gun');
-console.log(Poly);
-Poly.gainXp(1000);
+// const Poly = new Warrior('Poly', 1000, 'gun');
+// console.log(Poly);
+// Poly.gainXp(1000);
+
+//! Промисы
+
+const promise = new Promise((resolve, reject) => {
+  const canFullfill = Math.random() > 0.5;
+
+  if (canFullfill) {
+    resolve('');
+  }
+});
