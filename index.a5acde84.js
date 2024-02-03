@@ -4,5 +4,5 @@ key:"changePrice",value:function(e){this.price=e}},{key:"updateModel",value:func
 function(){return this._model},set:function(e){this._model=e}},{key:"price",get:function(){return this._price},set:function(e){this._price=e}}],[{key:"carInfo",value://! Статический метод
 function(e){console.log("carObg",e)}}]),t}();
 //! Статические свойства
-e(f)(v,"description","About car class");new v({brand:"Audi",model:"Q3",price:35e3}),new Promise((function(e,t){Math.random()>.5&&e("")}))}();
-//# sourceMappingURL=index.78d3f6a3.js.map
+e(f)(v,"description","About car class");new v({brand:"Audi",model:"Q3",price:35e3});var h=new Promise((function(e,t){var r=Math.random()>.5;setTimeout((function(){r&&e("All ok (исполнен fulfilled)"),t("error (отклонен rejected)")}),2e3)}));console.log(h)}();
+//# sourceMappingURL=index.a5acde84.js.map
