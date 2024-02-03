@@ -165,13 +165,95 @@ class Warrior extends Hero {
 // const Poly = new Warrior('Poly', 1000, 'gun');
 // console.log(Poly);
 // Poly.gainXp(1000);
-
+//*===================================================================================================
 //! Промисы
 
+//? Здесь содаем промис
 const promise = new Promise((resolve, reject) => {
   const canFullfill = Math.random() > 0.5;
 
-  if (canFullfill) {
-    resolve('');
-  }
+  setTimeout(() => {
+    if (canFullfill) {
+      resolve('All ok (исполнен fulfilled)');
+    }
+
+    reject('error (отклонен rejected)');
+  }, 2000);
 });
+
+console.log(promise);
+
+/*
+? then() это подписка на промис. then() буквально говорить если промис выполнился успешно то сделай это.
+? здесь делаем планровку
+*/
+// promise.then(result => {
+//   console.log('result:', result);
+// },
+//   error => {
+//     console.log('error:', error);
+//   }
+// );
+//! Концепция then(onSuccess, onError)
+//! В then() мы обрабатываем успешное выполнение.  В catch() Обрабатываем ошибку. finally() для снятия промиса, выполняется в любом случае.
+
+//* then() через функции
+// promise.then(onFulfilled, onError); //результат промисов можно получит ТОЛЬКО ВНУТРИ ЭТИХ КОЛЛБЕКОВ
+
+// function onFulfilled(result) {
+//   console.log(`✅ ${result}`);
+// };
+
+// function onError(error) {
+//   console.log(`❌ ${error}`);
+// };
+
+//* Цепочки промисов (chaining)
+//! Промис в цепоче возвращает промис
+// promise
+//   .then(result => {
+//     console.log(result);
+//     //эта коллбек функция передаст 5 в следующий then()
+//     return 5;
+//   })
+//   .then(
+//     //В Этоу колбук функцию придет 5 с предидущего then(). так как этот колбук ничег не возвращает в следующий колбек придет
+//     // undefient
+//     x => {
+//       console.log(x);
+//     }
+//   )
+//   .then(
+//     // этот then() вернет undefient
+//     y => {
+//       console.log(y);
+//     }
+//   );
+
+//* пример с catch()
+
+// promise
+//   .then(result => {
+//     console.log(result);
+//     //эта коллбек функция передаст 5 в следующий then()
+//     return 5;
+//   })
+//   .then(
+//     //В Этоу колбук функцию придет 5 с предидущего then(). так как этот колбук ничег не возвращает в следующий колбек придет
+//     // undefient
+//     x => {
+//       console.log(x);
+//     }
+//   )
+//   .then(
+//     // этот then() вернет undefient
+//     y => {
+//       console.log(y);
+//     }
+//   )
+//   .catch(error => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log('Я выполнюсь всегда');
+//   });
